@@ -1,0 +1,522 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		21455BC31BE1A282003C504C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21455BC21BE1A282003C504C /* AppDelegate.swift */; };
+		21455BC51BE1A282003C504C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21455BC41BE1A282003C504C /* ViewController.swift */; };
+		21455BC81BE1A282003C504C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21455BC61BE1A282003C504C /* Main.storyboard */; };
+		21455BCB1BE1A282003C504C /* HoosList2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 21455BC91BE1A282003C504C /* HoosList2.xcdatamodeld */; };
+		21455BCD1BE1A282003C504C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21455BCC1BE1A282003C504C /* Assets.xcassets */; };
+		21455BD01BE1A282003C504C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21455BCE1BE1A282003C504C /* LaunchScreen.storyboard */; };
+		21455BDB1BE1A282003C504C /* HoosList2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21455BDA1BE1A282003C504C /* HoosList2Tests.swift */; };
+		21455BE61BE1A282003C504C /* HoosList2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21455BE51BE1A282003C504C /* HoosList2UITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		21455BD71BE1A282003C504C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21455BB71BE1A282003C504C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 21455BBE1BE1A282003C504C;
+			remoteInfo = HoosList2;
+		};
+		21455BE21BE1A282003C504C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21455BB71BE1A282003C504C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 21455BBE1BE1A282003C504C;
+			remoteInfo = HoosList2;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		21455BBF1BE1A282003C504C /* HoosList2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoosList2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		21455BC21BE1A282003C504C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		21455BC41BE1A282003C504C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		21455BC71BE1A282003C504C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		21455BCA1BE1A282003C504C /* HoosList2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HoosList2.xcdatamodel; sourceTree = "<group>"; };
+		21455BCC1BE1A282003C504C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		21455BCF1BE1A282003C504C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		21455BD11BE1A282003C504C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21455BD61BE1A282003C504C /* HoosList2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoosList2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		21455BDA1BE1A282003C504C /* HoosList2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoosList2Tests.swift; sourceTree = "<group>"; };
+		21455BDC1BE1A282003C504C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21455BE11BE1A282003C504C /* HoosList2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoosList2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		21455BE51BE1A282003C504C /* HoosList2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoosList2UITests.swift; sourceTree = "<group>"; };
+		21455BE71BE1A282003C504C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		21455BBC1BE1A282003C504C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21455BD31BE1A282003C504C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21455BDE1BE1A282003C504C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		21455BB61BE1A282003C504C = {
+			isa = PBXGroup;
+			children = (
+				21455BC11BE1A282003C504C /* HoosList2 */,
+				21455BD91BE1A282003C504C /* HoosList2Tests */,
+				21455BE41BE1A282003C504C /* HoosList2UITests */,
+				21455BC01BE1A282003C504C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		21455BC01BE1A282003C504C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				21455BBF1BE1A282003C504C /* HoosList2.app */,
+				21455BD61BE1A282003C504C /* HoosList2Tests.xctest */,
+				21455BE11BE1A282003C504C /* HoosList2UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		21455BC11BE1A282003C504C /* HoosList2 */ = {
+			isa = PBXGroup;
+			children = (
+				21455BC21BE1A282003C504C /* AppDelegate.swift */,
+				21455BC41BE1A282003C504C /* ViewController.swift */,
+				21455BC61BE1A282003C504C /* Main.storyboard */,
+				21455BCC1BE1A282003C504C /* Assets.xcassets */,
+				21455BCE1BE1A282003C504C /* LaunchScreen.storyboard */,
+				21455BD11BE1A282003C504C /* Info.plist */,
+				21455BC91BE1A282003C504C /* HoosList2.xcdatamodeld */,
+			);
+			path = HoosList2;
+			sourceTree = "<group>";
+		};
+		21455BD91BE1A282003C504C /* HoosList2Tests */ = {
+			isa = PBXGroup;
+			children = (
+				21455BDA1BE1A282003C504C /* HoosList2Tests.swift */,
+				21455BDC1BE1A282003C504C /* Info.plist */,
+			);
+			path = HoosList2Tests;
+			sourceTree = "<group>";
+		};
+		21455BE41BE1A282003C504C /* HoosList2UITests */ = {
+			isa = PBXGroup;
+			children = (
+				21455BE51BE1A282003C504C /* HoosList2UITests.swift */,
+				21455BE71BE1A282003C504C /* Info.plist */,
+			);
+			path = HoosList2UITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		21455BBE1BE1A282003C504C /* HoosList2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21455BEA1BE1A282003C504C /* Build configuration list for PBXNativeTarget "HoosList2" */;
+			buildPhases = (
+				21455BBB1BE1A282003C504C /* Sources */,
+				21455BBC1BE1A282003C504C /* Frameworks */,
+				21455BBD1BE1A282003C504C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HoosList2;
+			productName = HoosList2;
+			productReference = 21455BBF1BE1A282003C504C /* HoosList2.app */;
+			productType = "com.apple.product-type.application";
+		};
+		21455BD51BE1A282003C504C /* HoosList2Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21455BED1BE1A282003C504C /* Build configuration list for PBXNativeTarget "HoosList2Tests" */;
+			buildPhases = (
+				21455BD21BE1A282003C504C /* Sources */,
+				21455BD31BE1A282003C504C /* Frameworks */,
+				21455BD41BE1A282003C504C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				21455BD81BE1A282003C504C /* PBXTargetDependency */,
+			);
+			name = HoosList2Tests;
+			productName = HoosList2Tests;
+			productReference = 21455BD61BE1A282003C504C /* HoosList2Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		21455BE01BE1A282003C504C /* HoosList2UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21455BF01BE1A282003C504C /* Build configuration list for PBXNativeTarget "HoosList2UITests" */;
+			buildPhases = (
+				21455BDD1BE1A282003C504C /* Sources */,
+				21455BDE1BE1A282003C504C /* Frameworks */,
+				21455BDF1BE1A282003C504C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				21455BE31BE1A282003C504C /* PBXTargetDependency */,
+			);
+			name = HoosList2UITests;
+			productName = HoosList2UITests;
+			productReference = 21455BE11BE1A282003C504C /* HoosList2UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		21455BB71BE1A282003C504C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Ram Ramkumar";
+				TargetAttributes = {
+					21455BBE1BE1A282003C504C = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					21455BD51BE1A282003C504C = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 21455BBE1BE1A282003C504C;
+					};
+					21455BE01BE1A282003C504C = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 21455BBE1BE1A282003C504C;
+					};
+				};
+			};
+			buildConfigurationList = 21455BBA1BE1A282003C504C /* Build configuration list for PBXProject "HoosList2" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 21455BB61BE1A282003C504C;
+			productRefGroup = 21455BC01BE1A282003C504C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				21455BBE1BE1A282003C504C /* HoosList2 */,
+				21455BD51BE1A282003C504C /* HoosList2Tests */,
+				21455BE01BE1A282003C504C /* HoosList2UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		21455BBD1BE1A282003C504C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21455BD01BE1A282003C504C /* LaunchScreen.storyboard in Resources */,
+				21455BCD1BE1A282003C504C /* Assets.xcassets in Resources */,
+				21455BC81BE1A282003C504C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21455BD41BE1A282003C504C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21455BDF1BE1A282003C504C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		21455BBB1BE1A282003C504C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21455BC51BE1A282003C504C /* ViewController.swift in Sources */,
+				21455BCB1BE1A282003C504C /* HoosList2.xcdatamodeld in Sources */,
+				21455BC31BE1A282003C504C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21455BD21BE1A282003C504C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21455BDB1BE1A282003C504C /* HoosList2Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21455BDD1BE1A282003C504C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21455BE61BE1A282003C504C /* HoosList2UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		21455BD81BE1A282003C504C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 21455BBE1BE1A282003C504C /* HoosList2 */;
+			targetProxy = 21455BD71BE1A282003C504C /* PBXContainerItemProxy */;
+		};
+		21455BE31BE1A282003C504C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 21455BBE1BE1A282003C504C /* HoosList2 */;
+			targetProxy = 21455BE21BE1A282003C504C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		21455BC61BE1A282003C504C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				21455BC71BE1A282003C504C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		21455BCE1BE1A282003C504C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				21455BCF1BE1A282003C504C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		21455BE81BE1A282003C504C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		21455BE91BE1A282003C504C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		21455BEB1BE1A282003C504C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HoosList2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.virginia.cs.httpscs4720.HoosList2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		21455BEC1BE1A282003C504C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HoosList2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.virginia.cs.httpscs4720.HoosList2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		21455BEE1BE1A282003C504C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HoosList2Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.virginia.cs.httpscs4720.HoosList2Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HoosList2.app/HoosList2";
+			};
+			name = Debug;
+		};
+		21455BEF1BE1A282003C504C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HoosList2Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.virginia.cs.httpscs4720.HoosList2Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HoosList2.app/HoosList2";
+			};
+			name = Release;
+		};
+		21455BF11BE1A282003C504C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = HoosList2UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.virginia.cs.httpscs4720.HoosList2UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = HoosList2;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		21455BF21BE1A282003C504C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = HoosList2UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.virginia.cs.httpscs4720.HoosList2UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = HoosList2;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		21455BBA1BE1A282003C504C /* Build configuration list for PBXProject "HoosList2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21455BE81BE1A282003C504C /* Debug */,
+				21455BE91BE1A282003C504C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21455BEA1BE1A282003C504C /* Build configuration list for PBXNativeTarget "HoosList2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21455BEB1BE1A282003C504C /* Debug */,
+				21455BEC1BE1A282003C504C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		21455BED1BE1A282003C504C /* Build configuration list for PBXNativeTarget "HoosList2Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21455BEE1BE1A282003C504C /* Debug */,
+				21455BEF1BE1A282003C504C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		21455BF01BE1A282003C504C /* Build configuration list for PBXNativeTarget "HoosList2UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21455BF11BE1A282003C504C /* Debug */,
+				21455BF21BE1A282003C504C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		21455BC91BE1A282003C504C /* HoosList2.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				21455BCA1BE1A282003C504C /* HoosList2.xcdatamodel */,
+			);
+			currentVersion = 21455BCA1BE1A282003C504C /* HoosList2.xcdatamodel */;
+			path = HoosList2.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 21455BB71BE1A282003C504C /* Project object */;
+}
