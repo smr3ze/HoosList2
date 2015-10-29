@@ -15,6 +15,7 @@
 		21455BD01BE1A282003C504C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21455BCE1BE1A282003C504C /* LaunchScreen.storyboard */; };
 		21455BDB1BE1A282003C504C /* HoosList2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21455BDA1BE1A282003C504C /* HoosList2Tests.swift */; };
 		21455BE61BE1A282003C504C /* HoosList2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21455BE51BE1A282003C504C /* HoosList2UITests.swift */; };
+		21455BFA1BE1C37F003C504C /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21455BF91BE1C37F003C504C /* CameraViewController.swift */; };
 		4C7A66E21BE1AF6B004B3A9D /* ShowInfoOfCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7A66E11BE1AF6B004B3A9D /* ShowInfoOfCellViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		21455BE11BE1A282003C504C /* HoosList2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoosList2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		21455BE51BE1A282003C504C /* HoosList2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoosList2UITests.swift; sourceTree = "<group>"; };
 		21455BE71BE1A282003C504C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21455BF91BE1C37F003C504C /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraViewController.swift; path = ../CameraViewController.swift; sourceTree = "<group>"; };
 		4C7A66E11BE1AF6B004B3A9D /* ShowInfoOfCellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowInfoOfCellViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,6 +103,7 @@
 		21455BC11BE1A282003C504C /* HoosList2 */ = {
 			isa = PBXGroup;
 			children = (
+				21455BF91BE1C37F003C504C /* CameraViewController.swift */,
 				21455BC21BE1A282003C504C /* AppDelegate.swift */,
 				21455BC41BE1A282003C504C /* ViewController.swift */,
 				21455BC61BE1A282003C504C /* Main.storyboard */,
@@ -264,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21455BC51BE1A282003C504C /* ViewController.swift in Sources */,
+				21455BFA1BE1C37F003C504C /* CameraViewController.swift in Sources */,
 				21455BCB1BE1A282003C504C /* HoosList2.xcdatamodeld in Sources */,
 				4C7A66E21BE1AF6B004B3A9D /* ShowInfoOfCellViewController.swift in Sources */,
 				21455BC31BE1A282003C504C /* AppDelegate.swift in Sources */,

@@ -81,6 +81,41 @@
             </objects>
             <point key="canvasLocation" x="1166" y="1198"/>
         </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="b7C-oB-R2h">
+            <objects>
+                <viewController id="FyR-Cv-Zss" customClass="CameraViewController" customModule="HoosList2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zI3-0j-nl2"/>
+                        <viewControllerLayoutGuide type="bottom" id="oSk-dA-JPh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="h2r-nz-Lhc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D09-cG-Ji8">
+                                <rect key="frame" x="37" y="65" width="502" height="435"/>
+                                <animations/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f9O-KE-rJi">
+                                <rect key="frame" x="37" y="527" width="114" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Take Photo"/>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="ImageView" destination="D09-cG-Ji8" id="YzF-y1-u4k"/>
+                        <outlet property="imageView" destination="D09-cG-Ji8" id="Ury-3n-vgS"/>
+                        <outlet property="takePhoto" destination="f9O-KE-rJi" id="qPd-vq-qnD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dwb-Ht-Gcs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2260" y="1200"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Kmc-oI-vrm">
             <objects>
