@@ -10,11 +10,18 @@ import UIKit
 
 class ViewController: UITableViewController {
     
-    let items = ["item1", "item2", "item3"]
+    @IBOutlet var tableview: UITableView!
+    
+    let items = ["Sing the Good Ole Song", "Paint Beta Bridge", "Visit a vineyard"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
