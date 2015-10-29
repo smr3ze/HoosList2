@@ -39,6 +39,18 @@ class ViewController: UITableViewController {
         cell.textLabel?.text = items[indexPath.item]
         return cell
     }
+    
+    let SegueIdentifier = "ShowInfoSegue"
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == SegueIdentifier {
+            if let destination = segue.destinationViewController as? ShowInfoOfCellViewController {
+                if let cellIndex = tableview.indexPathForSelectedRow?.row {
+                    destination.name = items[cellIndex]
+                }
+            }
+        }
+    }
 
 }
 
