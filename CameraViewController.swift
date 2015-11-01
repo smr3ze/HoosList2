@@ -35,6 +35,7 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
 //    }
     
     @IBAction func takePhoto(sender: UIButton) {
+        print("In here")
         imagePicker =  UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = .Camera
