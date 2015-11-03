@@ -8,9 +8,11 @@
 
 import UIKit
 
-class ShowInfoOfCellViewController: UIViewController {
+class ShowInfoOfCellViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate  {
     @IBOutlet weak var cellName: UILabel!
 
+    @IBOutlet weak var takePhoto: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,7 +34,6 @@ class ShowInfoOfCellViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
     var name = String()
     
     override func viewWillAppear(animated:Bool) {

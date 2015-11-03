@@ -9,10 +9,9 @@
 import UIKit
 
 class CameraViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-
-    @IBOutlet weak var ImageView: UIImageView!
-    @IBOutlet weak var takePhoto: UIButton!
     
+    @IBOutlet weak var ImageView: UIImageView!
+    @IBOutlet weak var openCamera: UIButton!
     //var imagePicker: UIImagePickerController!
     var imagePicker = UIImagePickerController()
     
@@ -34,7 +33,7 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
 //        presentViewController(imagePicker, animated: true, completion: nil)
 //    }
     
-    @IBAction func takePhoto(sender: UIButton) {
+    @IBAction func openCamera(sender: UIButton) {
         print("In here")
         imagePicker =  UIImagePickerController()
         imagePicker.delegate = self
