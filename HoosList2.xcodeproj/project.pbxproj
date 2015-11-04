@@ -18,6 +18,7 @@
 		21455BFA1BE1C37F003C504C /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21455BF91BE1C37F003C504C /* CameraViewController.swift */; };
 		219207FB1BE972A60093C70A /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219207FA1BE972A60093C70A /* Task.swift */; };
 		219207FD1BE973920093C70A /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219207FC1BE973920093C70A /* Location.swift */; };
+		219207FF1BE980420093C70A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 219207FE1BE980420093C70A /* CoreLocation.framework */; };
 		4C7A66E21BE1AF6B004B3A9D /* ShowInfoOfCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7A66E11BE1AF6B004B3A9D /* ShowInfoOfCellViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		21455BF91BE1C37F003C504C /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraViewController.swift; path = ../CameraViewController.swift; sourceTree = "<group>"; };
 		219207FA1BE972A60093C70A /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		219207FC1BE973920093C70A /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		219207FE1BE980420093C70A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4C7A66E11BE1AF6B004B3A9D /* ShowInfoOfCellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowInfoOfCellViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				219207FF1BE980420093C70A /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +90,7 @@
 		21455BB61BE1A282003C504C = {
 			isa = PBXGroup;
 			children = (
+				219207FE1BE980420093C70A /* CoreLocation.framework */,
 				21455BC11BE1A282003C504C /* HoosList2 */,
 				21455BD91BE1A282003C504C /* HoosList2Tests */,
 				21455BE41BE1A282003C504C /* HoosList2UITests */,

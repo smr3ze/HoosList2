@@ -71,13 +71,34 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aID-FZ-GVt">
-                                <rect key="frame" x="78" y="479" width="163" height="30"/>
+                                <rect key="frame" x="20" y="495" width="113" height="30"/>
                                 <animations/>
-                                <state key="normal" title="Take Photo"/>
+                                <color key="backgroundColor" red="0.66274509803921566" green="0.75294117647058822" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Take Photo">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <segue destination="FyR-Cv-Zss" kind="show" id="9Vu-Lb-P9v"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jR8-Qp-hdq">
+                                <rect key="frame" x="178" y="495" width="122" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.87450980392156863" green="0.54046248499996985" blue="0.59260725632947975" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Get Location">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="findMyLocation:" destination="wM0-Ar-2ZK" eventType="touchUpInside" id="a3Y-kb-Kaj"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hn3-Xa-niW">
+                                <rect key="frame" x="20" y="368" width="280" height="111"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -85,6 +106,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="cellName" destination="I5C-Pj-AIW" id="UW6-pw-5AY"/>
+                        <outlet property="locationLabel" destination="Hn3-Xa-niW" id="zEA-RS-zeh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gjn-cK-9Lv" userLabel="First Responder" sceneMemberID="firstResponder"/>
