@@ -11,6 +11,9 @@ import CoreData
 
 class ViewController: UITableViewController {
     
+    var tasks = [NSManagedObject]()
+
+    
     @IBOutlet var tableview: UITableView!
     
     let items = ["Sing the Good Ole Song", "Paint Beta Bridge", "Visit a vineyard"]
@@ -22,6 +25,24 @@ class ViewController: UITableViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        //2
+        let fetchRequest = NSFetchRequest(entityName: "Task")
+        
+        //3
+        do {
+            let results =
+            try managedContext.executeFetchRequest(fetchRequest)
+            tasks = results as! [NSManagedObject]
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+        
         tableView.reloadData()
     }
 
@@ -32,12 +53,14 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return tasks.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
-        cell.textLabel?.text = items[indexPath.item]
+        let task = tasks[indexPath.row]
+        cell.textLabel?.text = task.valueForKey("name") as? String
+        
         return cell
     }
     
@@ -47,7 +70,9 @@ class ViewController: UITableViewController {
         if segue.identifier == SegueIdentifier {
             if let destination = segue.destinationViewController as? ShowInfoOfCellViewController {
                 if let cellIndex = tableview.indexPathForSelectedRow?.row {
-                    destination.name = items[cellIndex]
+                    let task = tasks[cellIndex]
+
+                    destination.name = (task.valueForKey("name") as? String)!
                 }
             }
         }

@@ -17,6 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        print("starting didFinishLaunchingWithOptions")
+        if (entityIsEmpty("Task")) {
+            preloadData()
+        }
         return true
     }
 
@@ -106,6 +110,100 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    
+    func preloadData () {
+        let managedObjectContext = self.managedObjectContext
+
+        
+
+        // Retrieve data from the source file
+        print("Launched preloadData")
+        var fileArray = [String]()
+        if let path = NSBundle.mainBundle().pathForResource("tasks", ofType: "txt") {
+            if let file = try? String(contentsOfFile: path, usedEncoding: nil) {
+                print("found file")
+                fileArray = file.componentsSeparatedByString("\n")
+            }
+        }
+        
+
+        for lines in fileArray {
+
+            let task = NSEntityDescription.insertNewObjectForEntityForName("Task", inManagedObjectContext:managedObjectContext) as! Task
+            var attrArray = lines.componentsSeparatedByString(",")
+            task.id = attrArray[0]
+            task.name = attrArray[1]
+            task.day = attrArray[2]
+            
+            print(attrArray[1])
+            
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            
+            if (attrArray[3] == "nil") {
+                let faux = "2001-01-01";
+                task.startTime = dateFormatter.dateFromString(faux)!
+            }
+            else {
+                task.startTime = dateFormatter.dateFromString(attrArray[3])!
+            }
+            
+            if (attrArray[4] == "nil") {
+                let faux = "2001-01-01";
+                task.endTime = dateFormatter.dateFromString(faux)!
+            }
+            else {
+                task.endTime = dateFormatter.dateFromString(attrArray[4])!
+            }
+            
+            if (attrArray[6] == "1") {
+                task.recommended = true;
+            }
+            else {
+                task.recommended = false;
+            }
+
+            task.completed = false;
+            
+            do {
+                try managedObjectContext.save()
+            } catch let error as NSError  {
+                print("Could not save \(error), \(error.userInfo)")
+            }
+        }
+        
+
+    
+
+    }
+    
+    
+    func entityIsEmpty(entity: String) -> Bool
+    {
+        let managedObjectContext = self.managedObjectContext
+
+    
+        let request = NSFetchRequest(entityName: "Task")
+        
+        
+        do {
+            let results:NSArray? = try managedObjectContext.executeFetchRequest(request)
+            if results!.count == 0
+            {
+                return true
+            }
+            else
+            {
+                return false
+            }
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+            return false
+        }
+        
+        
+
+        
+    }
 
 }
-

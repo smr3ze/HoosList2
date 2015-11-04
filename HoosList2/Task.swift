@@ -11,10 +11,10 @@ import CoreData
 
 @objc(Task) class Task: NSManagedObject {
     
-    @NSManaged var id: Int32
+    @NSManaged var id: String
     @NSManaged var name: String
     @NSManaged var startTime: NSDate
-    @NSManaged var endTIme: NSDate
+    @NSManaged var endTime: NSDate
     @NSManaged var day: String
     @NSManaged var recommended: Bool
     @NSManaged var completed: Bool
