@@ -59,13 +59,13 @@ class ShowInfoOfCellViewController: UIViewController, UINavigationControllerDele
                 
                 let dateFormatter = NSDateFormatter()
                 dateFormatter.dateFormat = "yyyy-MM-dd"
-                let stringFormatter = NSDateFormatter()
-                dateFormatter.dateFormat = "dd-MM-yyyy"
-                let fauxdate = "2001-01-01"
+                //let stringFormatter = NSDateFormatter()
+                //dateFormatter.dateFormat = "dd-MM-yyyy"
+                //let fauxdate = "2001-01-01"
                 
                 
-                startDateLabel.text = stringFormatter.stringFromDate(startTime)
-                endDateLabel.text = stringFormatter.stringFromDate(endTime)
+                startDateLabel.text = dateFormatter.stringFromDate(startTime)
+                endDateLabel.text = dateFormatter.stringFromDate(endTime)
 
     
                 

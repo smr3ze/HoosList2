@@ -149,7 +149,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             
             if (attrArray[4] == "nil") {
-                let faux = "2001-01-01";
+                let faux = "2100-01-01";
                 task.endTime = dateFormatter.dateFromString(faux)!
             }
             else {
