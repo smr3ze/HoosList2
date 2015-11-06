@@ -28,7 +28,6 @@ class ShowInfoOfCellViewController: UIViewController, UINavigationControllerDele
         super.viewDidLoad()
         
         
-        
         let appDelegate =
         UIApplication.sharedApplication().delegate as! AppDelegate
         
