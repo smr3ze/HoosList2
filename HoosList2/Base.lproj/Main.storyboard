@@ -57,17 +57,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jR8-Qp-hdq">
-                                <rect key="frame" x="200" y="495" width="104" height="30"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.87450980392156863" green="0.54046248499996985" blue="0.59260725632947975" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="  Get Location  ">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="findMyLocation:" destination="wM0-Ar-2ZK" eventType="touchUpInside" id="a3Y-kb-Kaj"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aID-FZ-GVt">
                                 <rect key="frame" x="16" y="495" width="93" height="30"/>
                                 <animations/>
@@ -142,6 +131,17 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jR8-Qp-hdq">
+                                <rect key="frame" x="196" y="495" width="104" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.87450980392156863" green="0.54046248499996985" blue="0.59260725632947975" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="  Get Location  ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="findMyLocation:" destination="wM0-Ar-2ZK" eventType="touchUpInside" id="a3Y-kb-Kaj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

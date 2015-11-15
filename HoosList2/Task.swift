@@ -18,5 +18,5 @@ import CoreData
     @NSManaged var day: String
     @NSManaged var recommended: Bool
     @NSManaged var completed: Bool
-    @NSManaged var location: Location
+    @NSManaged var location: String
 }

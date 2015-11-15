@@ -163,6 +163,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 task.endTime = dateFormatter.dateFromString(attrArray[4])!
             }
             
+            task.location = attrArray[5]
+            
             if (attrArray[6] == "1") {
                 task.recommended = true;
             }
