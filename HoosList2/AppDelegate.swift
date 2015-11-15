@@ -164,6 +164,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             
             task.location = attrArray[5]
+            print(attrArray[5], ",", task.location)
             
             if (attrArray[6] == "1") {
                 task.recommended = true;

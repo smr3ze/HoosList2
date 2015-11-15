@@ -9,12 +9,15 @@
 import UIKit
 import CoreData
 import CoreLocation
+import Foundation
 
 class ShowInfoOfCellViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate  {
     
     var tasks = [NSManagedObject]()
 
     let locationManager = CLLocationManager()
+    var currentLoc = ""
+    
     
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var cellName: UILabel!
@@ -23,11 +26,11 @@ class ShowInfoOfCellViewController: UIViewController, UINavigationControllerDele
     @IBOutlet weak var startDateLabel: UILabel!
     @IBOutlet weak var endDateLabel: UILabel!
     @IBOutlet weak var recommendedLabel: UILabel!
+    @IBOutlet weak var locLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        findMyLocationText()
         let appDelegate =
         UIApplication.sharedApplication().delegate as! AppDelegate
         
@@ -55,6 +58,16 @@ class ShowInfoOfCellViewController: UIViewController, UINavigationControllerDele
                 let recommended = task.valueForKey("recommended") as! Bool
                 var completed = task.valueForKey("completed") as! Bool
                 
+                let location = task.valueForKey("location") as! String
+                print(location)
+                
+                if(location == "nil"){
+                    locLabel.text = "No location requirement"
+                }
+                else{
+                    locLabel.text = location
+                }
+                
                 
                 let dateFormatter = NSDateFormatter()
                 dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -62,10 +75,8 @@ class ShowInfoOfCellViewController: UIViewController, UINavigationControllerDele
                 //dateFormatter.dateFormat = "dd-MM-yyyy"
                 //let fauxdate = "2001-01-01"
                 
-                
                 startDateLabel.text = dateFormatter.stringFromDate(startTime)
                 endDateLabel.text = dateFormatter.stringFromDate(endTime)
-
     
                 
                 if (day == "nil") {
@@ -82,10 +93,67 @@ class ShowInfoOfCellViewController: UIViewController, UINavigationControllerDele
                     recommendedLabel.text = " "
                 }
                 
+                if(!completed){
+                    //getting current date/day
+                    let date = NSDate()
+                    let dayFormatter = NSDateFormatter()
+                    dayFormatter.dateFormat = "EEEE"
+                    
+                    let dayOfWeek = dayFormatter.stringFromDate(date)
+                    //let currDateStr = dateFormatter.stringFromDate(date)
+                    
+                    var passReqs = true
+                    
+                    //checking day of week
+                    if(!(dayOfWeek == day || day == "nil")){
+                        passReqs = false
+                        dayLabel.textColor = UIColor.redColor()
+                    }
+                    
+                    //checking date range
+                    let dateComparisonResultStart:NSComparisonResult = date.compare(startTime)
+                    
+                    if(!(dateComparisonResultStart == NSComparisonResult.OrderedDescending)){
+                        passReqs = false;
+                        startDateLabel.textColor = UIColor.redColor()
+                    }
+                    
+                    let dateComparisonResultEnd:NSComparisonResult = date.compare(endTime)
+                    if(!(dateComparisonResultEnd == NSComparisonResult.OrderedAscending)){
+                        passReqs = false;
+                        endDateLabel.textColor = UIColor.redColor()
+                    }
+                    
+                    //checking location
+                    if(!(currentLoc == location || location == "nil")){
+                        passReqs = false
+                        locLabel.textColor = UIColor.redColor()
+                    }
+                    
+                    //if reqs are true, take photo
+                    if(passReqs == true){
+                        completed = true
+                        print("completed:", completed)
+                        //takePhoto.setTitle("Mark as completed!", forState: .Normal)
+                        //takePhoto.enabled = true
+                    }
+                    //otherwise, disable button
+                    else{
+                        print("completed", completed)
+//                        takePhoto.setTitle("Requirements not met!", forState: .Normal)
+//                        takePhoto.enabled = false
+                    }
+                }
+                else{
+                    takePhoto.hidden = true
+                }
+                
+                
                 
                 
             }
         }
+        
 
         // Do any additional setup after loading the view.
     }
@@ -93,6 +161,13 @@ class ShowInfoOfCellViewController: UIViewController, UINavigationControllerDele
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func findMyLocationText() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
     }
     
     @IBAction func findMyLocation(sender: AnyObject) {
@@ -138,6 +213,8 @@ class ShowInfoOfCellViewController: UIViewController, UINavigationControllerDele
 //        print(placemark.administrativeArea! + " " + placemark.postalCode!)
 //        print(placemark.country!)
         locationLabel.numberOfLines = 3
+        currentLoc = placemark.subThoroughfare! + " " + placemark.thoroughfare!
+            //+ ", "+ placemark.locality! + ", " + placemark.administrativeArea! + " " + placemark.postalCode!
         locationLabel.text = placemark.subThoroughfare! + " " + placemark.thoroughfare! + ", " + placemark.locality! + ", " + placemark.administrativeArea! + " " + placemark.postalCode!
     }
 

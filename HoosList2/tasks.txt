@@ -1,4 +1,4 @@
-1,Streak the Lawn,nil,nil,nil,nil,1,0
+1,Streak the Lawn,nil,nil,nil,9 Elliewood Ave,1,0
 2,Pick fruit at Carters Mountain,nil,2016-03-01,2016-06-01,nil,0,0
 3,Have a dorm reunion,nil,nil,nil,nil,0,0
 4,See a horse at Foxfield,nil,2016-04-29,2016-5-01,nil,1,0
