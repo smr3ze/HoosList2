@@ -21,8 +21,6 @@ class ViewController: UITableViewController, CLLocationManagerDelegate {
     
     @IBOutlet var tableview: UITableView!
     
-    let items = ["Sing the Good Ole Song", "Paint Beta Bridge", "Visit a vineyard"]
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
