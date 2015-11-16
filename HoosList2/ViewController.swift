@@ -66,6 +66,10 @@ class ViewController: UITableViewController, CLLocationManagerDelegate {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
         let task = tasks[indexPath.row]
         cell.textLabel?.text = task.valueForKey("name") as? String
+        let complete = task.valueForKey("completed") as? Int
+        if (complete == 1) {
+            cell.textLabel?.textColor = UIColor(red: 39/255, green: 174/255, blue: 96/255, alpha: 1.0)
+        }
         
         return cell
     }

@@ -14,6 +14,8 @@ import Foundation
 class ShowInfoOfCellViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate  {
     
     var tasks = [NSManagedObject]()
+    var taskToUpdate = [NSManagedObject]()
+
 
     let locationManager = CLLocationManager()
     var currentLoc = String()
@@ -180,6 +182,8 @@ class ShowInfoOfCellViewController: UIViewController, UINavigationControllerDele
                     takePhoto.hidden = true
                 }
             }
+            
+            
         }
         
 
@@ -258,11 +262,53 @@ class ShowInfoOfCellViewController: UIViewController, UINavigationControllerDele
     */
     var name = String()
     
+    
+    
     override func viewWillAppear(animated:Bool) {
         cellName.text = name;
         cellName.font = UIFont(name:"HelveticaNeue-Bold", size: 20.0)
         cellName.textColor = UIColor(red: 41/255, green: 128/255, blue: 185/255, alpha: 1.0)
     }
+    
+    let SegueIdentifier = "ShowCameraSegue"
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == SegueIdentifier {
+            if let destination = segue.destinationViewController as? CameraViewController {
+                markCompleted()
+            }
+        }
+    }
+    
+    
+    
+    
+    func markCompleted() {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext: NSManagedObjectContext = appDelegate.managedObjectContext
+        
+
+        let fetchRequest = NSFetchRequest(entityName: "Task")
+        fetchRequest.predicate = NSPredicate(format: "name = %@", name)
+        
+        do {
+            let taskToUpdate = try managedContext.executeFetchRequest(fetchRequest)
+            
+            if taskToUpdate.count != 0{
+
+                taskToUpdate[0].setValue(1, forKey:"completed")
+                
+                
+                do {
+                    try managedContext.save()
+                }
+            }
+            
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+    }
+    
     
     
 
