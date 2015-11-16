@@ -215,7 +215,7 @@
 				TargetAttributes = {
 					21455BBE1BE1A282003C504C = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = 95C86UJL2Y;
+						DevelopmentTeam = Y9FE52N5WX;
 					};
 					21455BD51BE1A282003C504C = {
 						CreatedOnToolsVersion = 7.1;
@@ -431,7 +431,7 @@
 				INFOPLIST_FILE = HoosList2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.virginia.cs.httpscs4720.HoosList;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.virginia.cs.httpscs4720.HoosList2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -446,7 +446,7 @@
 				INFOPLIST_FILE = HoosList2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.virginia.cs.httpscs4720.HoosList;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.virginia.cs.httpscs4720.HoosList2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

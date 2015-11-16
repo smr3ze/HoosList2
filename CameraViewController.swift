@@ -14,6 +14,7 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
     @IBOutlet weak var openCamera: UIButton!
     //var imagePicker: UIImagePickerController!
     var imagePicker = UIImagePickerController()
+    @IBOutlet weak var saveButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,20 +44,33 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-//        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-//            ImageView.contentMode = .ScaleAspectFit
-//            ImageView.image = pickedImage
-//        }
-//        
-//        dismissViewControllerAnimated(true, completion: nil)
         imagePicker.dismissViewControllerAnimated(true, completion: nil)
         ImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        
     }
     
-//    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-//        dismissViewControllerAnimated(true, completion: nil)
-//    }
+    @IBAction func save(sender: AnyObject) {
+        if(ImageView.image != nil){
+            UIImageWriteToSavedPhotosAlbum(ImageView.image!, self, "image:didFinishSavingWithError:contextInfo:", nil)
+        }
+        else{
+            let alert = UIAlertController(title: "Whoa!", message: "Take a photo before you try to save!", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+    }
     
+    func image(image: UIImage, didFinishSavingWithError error: NSError?, contextInfo:UnsafePointer<Void>) {
+        if error == nil {
+            let ac = UIAlertController(title: "Saved!", message: "Your altered image has been saved to your photos.", preferredStyle: .Alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            presentViewController(ac, animated: true, completion: nil)
+        } else {
+            let ac = UIAlertController(title: "Save error", message: error?.localizedDescription, preferredStyle: .Alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            presentViewController(ac, animated: true, completion: nil)
+        }
+    }
 
     /*
     // MARK: - Navigation
