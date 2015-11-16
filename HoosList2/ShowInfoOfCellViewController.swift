@@ -27,6 +27,10 @@ class ShowInfoOfCellViewController: UIViewController, UINavigationControllerDele
     @IBOutlet weak var endDateLabel: UILabel!
     @IBOutlet weak var recommendedLabel: UILabel!
     @IBOutlet weak var locLabel: UILabel!
+    @IBOutlet weak var startTitleLabel: UILabel!
+    @IBOutlet weak var endTitleLabel: UILabel!
+    @IBOutlet weak var locationTitleLabel: UILabel!
+    @IBOutlet weak var dayTitleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,8 +65,11 @@ class ShowInfoOfCellViewController: UIViewController, UINavigationControllerDele
                 let location = task.valueForKey("location") as! String
                 print(location)
                 
+                //process location text
+                locationTitleLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 16.0)
+                locationTitleLabel.textColor = UIColor(red: 44/255, green: 62/255, blue: 80/255, alpha: 1.0)
                 if(location == "nil"){
-                    locLabel.text = "No location requirement"
+                    locLabel.text = "N/A"
                 }
                 else{
                     locLabel.text = location
@@ -75,12 +82,31 @@ class ShowInfoOfCellViewController: UIViewController, UINavigationControllerDele
                 //dateFormatter.dateFormat = "dd-MM-yyyy"
                 //let fauxdate = "2001-01-01"
                 
-                startDateLabel.text = dateFormatter.stringFromDate(startTime)
-                endDateLabel.text = dateFormatter.stringFromDate(endTime)
-    
+                //process start date display text
+                startTitleLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 16.0)
+                startTitleLabel.textColor = UIColor(red: 44/255, green: 62/255, blue: 80/255, alpha: 1.0)
+                if(dateFormatter.stringFromDate(startTime) == "2001-01-01"){
+                    startDateLabel.text = "N/A"
+                }
+                else{
+                    startDateLabel.text = dateFormatter.stringFromDate(startTime)
+                }
                 
+                endTitleLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 16.0)
+                endTitleLabel.textColor = UIColor(red: 44/255, green: 62/255, blue: 80/255, alpha: 1.0)
+                //process end date display text
+                if(dateFormatter.stringFromDate(endTime) == "2100-01-01"){
+                    endDateLabel.text = "N/A"
+                }
+                else{
+                    endDateLabel.text = dateFormatter.stringFromDate(endTime)
+                }
+    
+                //process day label
+                dayTitleLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 16.0)
+                dayTitleLabel.textColor = UIColor(red: 44/255, green: 62/255, blue: 80/255, alpha: 1.0)
                 if (day == "nil") {
-                    dayLabel.text = "No day requirement"
+                    dayLabel.text = "N/A"
                 }
                 else {
                     dayLabel.text = day
@@ -107,7 +133,8 @@ class ShowInfoOfCellViewController: UIViewController, UINavigationControllerDele
                     //checking day of week
                     if(!(dayOfWeek == day || day == "nil")){
                         passReqs = false
-                        dayLabel.textColor = UIColor.redColor()
+                        dayTitleLabel.textColor = UIColor(red: 217/255, green: 30/255, blue: 24/255, alpha: 1.0)
+                        dayLabel.textColor = UIColor(red: 217/255, green: 30/255, blue: 24/255, alpha: 1.0)
                     }
                     
                     //checking date range
@@ -115,19 +142,21 @@ class ShowInfoOfCellViewController: UIViewController, UINavigationControllerDele
                     
                     if(!(dateComparisonResultStart == NSComparisonResult.OrderedDescending)){
                         passReqs = false;
-                        startDateLabel.textColor = UIColor.redColor()
+                        startDateLabel.textColor = UIColor(red: 217/255, green: 30/255, blue: 24/255, alpha: 1.0)
+                        startTitleLabel.textColor = UIColor(red: 217/255, green: 30/255, blue: 24/255, alpha: 1.0)
                     }
                     
                     let dateComparisonResultEnd:NSComparisonResult = date.compare(endTime)
                     if(!(dateComparisonResultEnd == NSComparisonResult.OrderedAscending)){
                         passReqs = false;
-                        endDateLabel.textColor = UIColor.redColor()
+                        endDateLabel.textColor = UIColor(red: 217/255, green: 30/255, blue: 24/255, alpha: 1.0)
+                        endTitleLabel.textColor = UIColor(red: 217/255, green: 30/255, blue: 24/255, alpha: 1.0)
                     }
                     
                     //checking location
                     if(!(currentLoc == location || location == "nil")){
                         passReqs = false
-                        locLabel.textColor = UIColor.redColor()
+                        locLabel.textColor = UIColor(red: 217/255, green: 30/255, blue: 24/255, alpha: 1.0)
                     }
                     
                     //if reqs are true, take photo
@@ -147,10 +176,6 @@ class ShowInfoOfCellViewController: UIViewController, UINavigationControllerDele
                 else{
                     takePhoto.hidden = true
                 }
-                
-                
-                
-                
             }
         }
         
@@ -232,6 +257,8 @@ class ShowInfoOfCellViewController: UIViewController, UINavigationControllerDele
     
     override func viewWillAppear(animated:Bool) {
         cellName.text = name;
+        cellName.font = UIFont(name:"HelveticaNeue-Bold", size: 20.0)
+        cellName.textColor = UIColor(red: 41/255, green: 128/255, blue: 185/255, alpha: 1.0)
     }
     
     
