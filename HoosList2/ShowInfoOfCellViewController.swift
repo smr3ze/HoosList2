@@ -21,6 +21,7 @@ class ShowInfoOfCellViewController: UIViewController, UINavigationControllerDele
     
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var cellName: UILabel!
+    //@IBOutlet weak var takePhoto: UIButton!
     @IBOutlet weak var takePhoto: UIButton!
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var startDateLabel: UILabel!
@@ -157,20 +158,22 @@ class ShowInfoOfCellViewController: UIViewController, UINavigationControllerDele
                     if(!(currentLoc == location || location == "nil")){
                         passReqs = false
                         locLabel.textColor = UIColor(red: 217/255, green: 30/255, blue: 24/255, alpha: 1.0)
+                        locationTitleLabel.textColor = UIColor(red: 217/255, green: 30/255, blue: 24/255, alpha: 1.0)
                     }
                     
                     //if reqs are true, take photo
                     if(passReqs == true){
                         completed = true
                         print("completed:", completed)
-                        //takePhoto.setTitle("Mark as completed!", forState: .Normal)
-                        //takePhoto.enabled = true
+                        takePhoto.setTitle("Mark as completed!", forState: .Normal)
+                        takePhoto.enabled = true
                     }
                     //otherwise, disable button
                     else{
                         print("completed", completed)
-//                        takePhoto.setTitle("Requirements not met!", forState: .Normal)
-//                        takePhoto.enabled = false
+                        takePhoto.setTitle("Requirements not met!", forState: .Normal)
+                        takePhoto.enabled = false
+                        takePhoto.backgroundColor = UIColor(red: 137/255, green: 196/255, blue: 244/255, alpha: 1.0)
                     }
                 }
                 else{
