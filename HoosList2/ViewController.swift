@@ -8,10 +8,15 @@
 
 import UIKit
 import CoreData
+import CoreLocation
+import Foundation
 
-class ViewController: UITableViewController {
+class ViewController: UITableViewController, CLLocationManagerDelegate {
     
     var tasks = [NSManagedObject]()
+    let locationManager = CLLocationManager()
+    var currentLocSend = ""
+
 
     
     @IBOutlet var tableview: UITableView!
@@ -25,6 +30,7 @@ class ViewController: UITableViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        findMyLocationText()
         
         let appDelegate =
         UIApplication.sharedApplication().delegate as! AppDelegate
@@ -73,10 +79,63 @@ class ViewController: UITableViewController {
                     let task = tasks[cellIndex]
 
                     destination.name = (task.valueForKey("name") as? String)!
+                    destination.currentLoc = currentLocSend
                 }
             }
         }
     }
+    
+    
+    
+    func findMyLocationText() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+    }
+    
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    {
+        
+        CLGeocoder().reverseGeocodeLocation(manager.location!, completionHandler: {(placemarks, error)->Void in
+            
+            if (error != nil)
+            {
+                print("Error: " + error!.localizedDescription)
+                return
+            }
+            
+            if placemarks!.count > 0
+            {
+                let pm = placemarks![0]
+                self.displayLocationInfo(pm)
+            }
+            else
+            {
+                print("Error with the data.")
+            }
+        })
+    }
+    
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print("Error while updating location " + error.localizedDescription)
+    }
+    
+    func displayLocationInfo(placemark: CLPlacemark) {
+        //stop updating location to save battery life
+        self.locationManager.stopUpdatingLocation()
+        //        print(placemark.subThoroughfare! + " " + placemark.thoroughfare!)
+        //        print(placemark.name!)
+        //        print(placemark.locality!)
+        //        print(placemark.administrativeArea! + " " + placemark.postalCode!)
+        //        print(placemark.country!)
+        currentLocSend  = placemark.subThoroughfare! + " " + placemark.thoroughfare!
+        //+ ", "+ placemark.locality! + ", " + placemark.administrativeArea! + " " + placemark.postalCode!
+
+    }
+
+
 
 }
 

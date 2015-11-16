@@ -16,7 +16,7 @@ class ShowInfoOfCellViewController: UIViewController, UINavigationControllerDele
     var tasks = [NSManagedObject]()
 
     let locationManager = CLLocationManager()
-    var currentLoc = ""
+    var currentLoc = String()
     
     
     @IBOutlet weak var locationLabel: UILabel!
@@ -34,7 +34,7 @@ class ShowInfoOfCellViewController: UIViewController, UINavigationControllerDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        findMyLocationText()
+        //findMyLocationText()
         let appDelegate =
         UIApplication.sharedApplication().delegate as! AppDelegate
         
@@ -78,10 +78,10 @@ class ShowInfoOfCellViewController: UIViewController, UINavigationControllerDele
                 
                 let dateFormatter = NSDateFormatter()
                 dateFormatter.dateFormat = "yyyy-MM-dd"
-                //let stringFormatter = NSDateFormatter()
-                //dateFormatter.dateFormat = "dd-MM-yyyy"
-                //let fauxdate = "2001-01-01"
                 
+                let properDateFormatter = NSDateFormatter()
+                properDateFormatter.dateFormat = "MM-dd-yyyy"
+
                 //process start date display text
                 startTitleLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 16.0)
                 startTitleLabel.textColor = UIColor(red: 44/255, green: 62/255, blue: 80/255, alpha: 1.0)
@@ -89,7 +89,7 @@ class ShowInfoOfCellViewController: UIViewController, UINavigationControllerDele
                     startDateLabel.text = "N/A"
                 }
                 else{
-                    startDateLabel.text = dateFormatter.stringFromDate(startTime)
+                    startDateLabel.text = properDateFormatter.stringFromDate(startTime)
                 }
                 
                 endTitleLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 16.0)
@@ -99,7 +99,7 @@ class ShowInfoOfCellViewController: UIViewController, UINavigationControllerDele
                     endDateLabel.text = "N/A"
                 }
                 else{
-                    endDateLabel.text = dateFormatter.stringFromDate(endTime)
+                    endDateLabel.text = properDateFormatter.stringFromDate(endTime)
                 }
     
                 //process day label
