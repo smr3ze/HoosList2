@@ -1,12 +1,18 @@
 1,Streak the Lawn,nil,nil,nil,nil,1,0
 2,Pick fruit at Carters Mountain,nil,2016-03-01,2016-06-01,1435 Carters Mountain Trail,0,0
 3,Have a dorm reunion,nil,nil,nil,nil,0,0
-4,See a horse at Foxfield,nil,2016-04-29,2016-5-01,nil,1,0
+4,See horse at Foxfield,nil,2016-04-29,2016-5-01,nil,1,0
 5,Survive at Biltmore,Thursday,nil,nil,16 Elliewood Ave,0,0
 6,Explore the Alderman stacks,nil,nil,nil,nil,0,0
 7,Visit Monticello,nil,nil,nil,931 Thomas Jefferson Pkwy,0,0
 8,Eat a pancake for Parkinsons,Saturday,2015-10-16,2015-10-18,nil,0,0
 9,High Five Dean Groves,nil,nil,nil,nil,1,0
-10,Participate in Trick-or-Treat on the Lawn,nil,2016-10-30,2016-11-01,nil,1,0
-11,Test your intelligence at Mellow Trivia,Wednesday,nil,nil,1321 W Main St,0,0
-12,Attend an event at HackCville,nil,nil,nil,9 Elliewood Ave,1,0
+10,Trick-or-Treat on the Lawn,nil,2016-10-30,2016-11-01,nil,1,0
+11,Test intelligence at Mellow Trivia,Wednesday,nil,nil,1321 W Main St,0,0
+12,Attend event at HackCville,nil,nil,nil,9 Elliewood Ave,1,0
+13,Have a Gus Burger,nil,nil,nil,1407 University Ave,0,0
+14,Nab the #1 ticket at Bodos,nil,nil,nil,1609 University Ave,0,0
+15,Tailgate a football game,Saturday,2015-08-30,2016-01-01,nil,0,0
+16,Wear the Honors of Honor,nil,2016-05-18,2016-05-23,nil,1,0
+17,Grab some BBQ in Belmont,nil,nil,nil,816 Hinton Ave,1,0
+18,Attend Tom Tom Founders Festival,nil,2016-04-11,2016-04-17,nil,1,0

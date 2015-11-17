@@ -274,7 +274,7 @@ class ShowInfoOfCellViewController: UIViewController, UINavigationControllerDele
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == SegueIdentifier {
-            if let destination = segue.destinationViewController as? CameraViewController {
+            if let _ = segue.destinationViewController as? CameraViewController {
                 markCompleted()
             }
         }

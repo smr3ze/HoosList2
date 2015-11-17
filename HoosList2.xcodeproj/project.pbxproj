@@ -215,7 +215,7 @@
 				TargetAttributes = {
 					21455BBE1BE1A282003C504C = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = Y9FE52N5WX;
+						DevelopmentTeam = 95C86UJL2Y;
 					};
 					21455BD51BE1A282003C504C = {
 						CreatedOnToolsVersion = 7.1;
@@ -425,13 +425,13 @@
 		21455BEB1BE1A282003C504C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = HoosList2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.virginia.cs.httpscs4720.HoosList2;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.virginia.cs.httpscs4720.HoosList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -440,13 +440,13 @@
 		21455BEC1BE1A282003C504C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = HoosList2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.virginia.cs.httpscs4720.HoosList2;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.virginia.cs.httpscs4720.HoosList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
