@@ -133,54 +133,145 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
-
-        for lines in fileArray {
-
-            let task = NSEntityDescription.insertNewObjectForEntityForName("Task", inManagedObjectContext:managedObjectContext) as! Task
-            var attrArray = lines.componentsSeparatedByString(",")
-            task.id = attrArray[0]
-            task.name = attrArray[1]
-            task.day = attrArray[2]
-            
-            print(attrArray[1])
-            
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd"
-            
-            if (attrArray[3] == "nil") {
-                let faux = "2001-01-01";
-                task.startTime = dateFormatter.dateFromString(faux)!
-            }
-            else {
-                task.startTime = dateFormatter.dateFromString(attrArray[3])!
-            }
-            
-            if (attrArray[4] == "nil") {
-                let faux = "2100-01-01";
-                task.endTime = dateFormatter.dateFromString(faux)!
-            }
-            else {
-                task.endTime = dateFormatter.dateFromString(attrArray[4])!
-            }
-            
-            task.location = attrArray[5]
-            print(attrArray[5], ",", task.location)
-            
-            if (attrArray[6] == "1") {
-                task.recommended = true;
-            }
-            else {
-                task.recommended = false;
-            }
-
-            task.completed = false;
-            
-            do {
-                try managedObjectContext.save()
-            } catch let error as NSError  {
-                print("Could not save \(error), \(error.userInfo)")
-            }
+        let postEndpoint: String = "http://goodwin.io/API/getTasks.php"
+        guard let url = NSURL(string: postEndpoint) else {
+            print("Error: cannot create URL")
+            return
         }
+        let urlRequest = NSURLRequest(URL: url)
+        
+        let config = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let session = NSURLSession(configuration: config)
+        
+        let task = session.dataTaskWithRequest(urlRequest, completionHandler: {
+            (data, response, error) in
+            guard let responseData = data else {
+                print("Error: did not receive data")
+                return
+            }
+            guard error == nil else {
+                print("error calling GET on /posts/1")
+                print(error)
+                return
+            }
+            // parse the result as JSON, since that's what the API provides
+            do {
+                var d = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                var arr = d!.componentsSeparatedByString("<")
+                var dataweneed:NSString = arr[0] as NSString
+                let data = try NSJSONSerialization.JSONObjectWithData(dataweneed.dataUsingEncoding(NSUTF8StringEncoding)!, options: NSJSONReadingOptions.MutableContainers) as? NSArray
+                
+                var count = 1;
+                for attrArray in data!{
+                    let task = NSEntityDescription.insertNewObjectForEntityForName("Task", inManagedObjectContext:managedObjectContext) as! Task
+                    task.id = String(count)
+                    task.name = attrArray["name"] as! String
+                    task.day = attrArray["weekday"] as! String
+                    
+                    //print(attrArray[1])
+                    
+                    let dateFormatter = NSDateFormatter()
+                    dateFormatter.dateFormat = "yyyy-MM-dd"
+                    
+                    if (attrArray["startDate"] as! String == "nil") {
+                        let faux = "2001-01-01";
+                        task.startTime = dateFormatter.dateFromString(faux)!
+                    }
+                    else {
+                        task.startTime = dateFormatter.dateFromString(attrArray["startDate"] as! String)!
+                    }
+                    
+                    if (attrArray["endDate"] as! String == "nil") {
+                        let faux = "2100-01-01";
+                        task.endTime = dateFormatter.dateFromString(faux)!
+                    }
+                    else {
+                        task.endTime = dateFormatter.dateFromString(attrArray["endDate"] as! String)!
+                    }
+                    
+                    task.location = attrArray["location"] as! String
+                    //print(attrArray[5], ",", task.location)
+                    
+                    if (attrArray["recommended"] as! String == "1") {
+                        task.recommended = true;
+                    }
+                    else {
+                        task.recommended = false;
+                    }
+                    
+                    task.completed = false;
+                    
+                    do {
+                        try managedObjectContext.save()
+                    } catch let error as NSError  {
+                        print("Could not save \(error), \(error.userInfo)")
+                    }
+
+                }
+            } catch  {
+                print("error trying to convert data to JSON")
+                return
+            }
+            // now we have the post, let's just print it to prove we can access it
+            //print("The post is: " + post.description)
+
+            
+            // the post object is a dictionary
+            // so we just access the title using the "title" key
+            // so check for a title and print it if we have one
+//            if let postTitle = data["title"] as? String {
+//                print("The title is: " + postTitle)
+//            }
+        })
+        task.resume()
+
+//        for lines in fileArray {
+//
+//            let task = NSEntityDescription.insertNewObjectForEntityForName("Task", inManagedObjectContext:managedObjectContext) as! Task
+//            var attrArray = lines.componentsSeparatedByString(",")
+//            task.id = attrArray[0]
+//            task.name = attrArray[1]
+//            task.day = attrArray[2]
+//            
+//            print(attrArray[1])
+//            
+//            let dateFormatter = NSDateFormatter()
+//            dateFormatter.dateFormat = "yyyy-MM-dd"
+//            
+//            if (attrArray[3] == "nil") {
+//                let faux = "2001-01-01";
+//                task.startTime = dateFormatter.dateFromString(faux)!
+//            }
+//            else {
+//                task.startTime = dateFormatter.dateFromString(attrArray[3])!
+//            }
+//            
+//            if (attrArray[4] == "nil") {
+//                let faux = "2100-01-01";
+//                task.endTime = dateFormatter.dateFromString(faux)!
+//            }
+//            else {
+//                task.endTime = dateFormatter.dateFromString(attrArray[4])!
+//            }
+//            
+//            task.location = attrArray[5]
+//            print(attrArray[5], ",", task.location)
+//            
+//            if (attrArray[6] == "1") {
+//                task.recommended = true;
+//            }
+//            else {
+//                task.recommended = false;
+//            }
+//
+//            task.completed = false;
+//            
+//            do {
+//                try managedObjectContext.save()
+//            } catch let error as NSError  {
+//                print("Could not save \(error), \(error.userInfo)")
+//            }
+//        }
         
 
     
