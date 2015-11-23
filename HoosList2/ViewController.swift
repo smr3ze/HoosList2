@@ -35,6 +35,10 @@ class ViewController: UITableViewController, CLLocationManagerDelegate {
         
         let managedContext = appDelegate.managedObjectContext
         
+        if (appDelegate.entityIsEmpty("Task")) {
+            preloadData()
+        }
+        
         //2
         let fetchRequest = NSFetchRequest(entityName: "Task")
         
@@ -46,8 +50,6 @@ class ViewController: UITableViewController, CLLocationManagerDelegate {
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
         }
-        
-        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -135,6 +137,124 @@ class ViewController: UITableViewController, CLLocationManagerDelegate {
         currentLocSend  = placemark.subThoroughfare! + " " + placemark.thoroughfare!
         //+ ", "+ placemark.locality! + ", " + placemark.administrativeArea! + " " + placemark.postalCode!
 
+    }
+    
+    func preloadData () {
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedObjectContext = appDelegate.managedObjectContext
+        
+        
+        // Retrieve data from the source file
+        print("Launched preloadData")
+        var fileArray = [String]()
+        if let path = NSBundle.mainBundle().pathForResource("tasks", ofType: "txt") {
+            if let file = try? String(contentsOfFile: path, usedEncoding: nil) {
+                print("found file")
+                fileArray = file.componentsSeparatedByString("\n")
+            }
+        }
+        
+        let postEndpoint: String = "http://goodwin.io/API/getTasks.php"
+        guard let url = NSURL(string: postEndpoint) else {
+            print("Error: cannot create URL")
+            return
+        }
+        let urlRequest = NSURLRequest(URL: url)
+        
+        let config = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let session = NSURLSession(configuration: config)
+        
+        let retrieve = session.dataTaskWithRequest(urlRequest, completionHandler: {
+            (data, response, error) in
+            guard let responseData = data else {
+                print("Error: did not receive data")
+                return
+            }
+            guard error == nil else {
+                print("error calling GET on /posts/1")
+                print(error)
+                return
+            }
+            // parse the result as JSON, since that's what the API provides
+            do {
+                var d = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                var arr = d!.componentsSeparatedByString("<")
+                var dataweneed:NSString = arr[0] as NSString
+                let data = try NSJSONSerialization.JSONObjectWithData(dataweneed.dataUsingEncoding(NSUTF8StringEncoding)!, options: NSJSONReadingOptions.MutableContainers) as? NSArray
+                
+                var count = 1;
+                for attrArray in data!{
+                    let task = NSEntityDescription.insertNewObjectForEntityForName("Task", inManagedObjectContext:managedObjectContext) as! Task
+                    task.id = String(count)
+                    count++;
+                    task.name = attrArray["name"] as! String
+                    task.day = attrArray["weekday"] as! String
+                    
+                    //print(attrArray[1])
+                    
+                    let dateFormatter = NSDateFormatter()
+                    dateFormatter.dateFormat = "yyyy-MM-dd"
+                    
+                    if (attrArray["startDate"] as! String == "nil") {
+                        let faux = "2001-01-01";
+                        task.startTime = dateFormatter.dateFromString(faux)!
+                    }
+                    else {
+                        task.startTime = dateFormatter.dateFromString(attrArray["startDate"] as! String)!
+                    }
+                    
+                    if (attrArray["endDate"] as! String == "nil") {
+                        let faux = "2100-01-01";
+                        task.endTime = dateFormatter.dateFromString(faux)!
+                    }
+                    else {
+                        task.endTime = dateFormatter.dateFromString(attrArray["endDate"] as! String)!
+                    }
+                    
+                    task.location = attrArray["location"] as! String
+                    //print(attrArray[5], ",", task.location)
+                    
+                    if (attrArray["recommended"] as! String == "1") {
+                        task.recommended = true;
+                    }
+                    else {
+                        task.recommended = false;
+                    }
+                    
+                    task.completed = false;
+                    
+                    do {
+                        try managedObjectContext.save()
+                    } catch let error as NSError  {
+                        print("Could not save \(error), \(error.userInfo)")
+                    }
+                    
+                }
+            } catch  {
+                print("error trying to convert data to JSON")
+                return
+            }
+            
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                
+                let fetchRequest = NSFetchRequest(entityName: "Task")
+                
+                //3
+                do {
+                    let results =
+                    try managedObjectContext.executeFetchRequest(fetchRequest)
+                    self.tasks = results as! [NSManagedObject]
+                } catch let error as NSError {
+                    print("Could not fetch \(error), \(error.userInfo)")
+                }
+                self.tableView.reloadData()
+            })
+        })
+        retrieve.resume()
+        
     }
 
 
