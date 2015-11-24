@@ -50,6 +50,7 @@ class ViewController: UITableViewController, CLLocationManagerDelegate {
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
         }
+        tableview.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
