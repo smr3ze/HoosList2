@@ -70,6 +70,9 @@ class ViewController: UITableViewController, CLLocationManagerDelegate {
         if (complete == 1) {
             cell.textLabel?.textColor = UIColor(red: 39/255, green: 174/255, blue: 96/255, alpha: 1.0)
         }
+        else{
+            cell.textLabel?.textColor = UIColor.blackColor()
+        }
         
         return cell
     }
