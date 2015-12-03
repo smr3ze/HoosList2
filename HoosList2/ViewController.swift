@@ -157,17 +157,6 @@ class ViewController: UITableViewController, CLLocationManagerDelegate {
         
         let managedObjectContext = appDelegate.managedObjectContext
         
-        
-        // Retrieve data from the source file
-        print("Launched preloadData")
-        var fileArray = [String]()
-        if let path = NSBundle.mainBundle().pathForResource("tasks", ofType: "txt") {
-            if let file = try? String(contentsOfFile: path, usedEncoding: nil) {
-                print("found file")
-                fileArray = file.componentsSeparatedByString("\n")
-            }
-        }
-        
         let postEndpoint: String = "http://goodwin.io/API/getTasks.php"
         guard let url = NSURL(string: postEndpoint) else {
             print("Error: cannot create URL")
@@ -191,9 +180,9 @@ class ViewController: UITableViewController, CLLocationManagerDelegate {
             }
             // parse the result as JSON, since that's what the API provides
             do {
-                var d = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                let d = NSString(data: data!, encoding: NSUTF8StringEncoding)
                 var arr = d!.componentsSeparatedByString("<")
-                var dataweneed:NSString = arr[0] as NSString
+                let dataweneed:NSString = arr[0] as NSString
                 let data = try NSJSONSerialization.JSONObjectWithData(dataweneed.dataUsingEncoding(NSUTF8StringEncoding)!, options: NSJSONReadingOptions.MutableContainers) as? NSArray
                 
                 var count = 1;

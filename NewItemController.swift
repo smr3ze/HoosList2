@@ -65,15 +65,25 @@ class NewItemController: UITableViewController {
             
             task.id = String(tasks.count + 1)
             
-            task.name = String(taskNameField.text!)
+            let name = taskNameField.text!
+            task.name = String(name)
             
-            task.day = String(weekdayField.text!)
+            let day = weekdayField.text!
+            task.day = String(day)
+            
+            
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            
+            let startDateString = dateFormatter.stringFromDate(startDatePicker.date)
+            let endDateString = dateFormatter.stringFromDate(endDatePicker.date)
             
             task.startTime = startDatePicker.date
             
             task.endTime = endDatePicker.date
             
-            task.location = String(locationField.text!)
+            let location = locationField.text!
+            task.location = String(location)
             
             task.recommended = false
             
@@ -84,6 +94,32 @@ class NewItemController: UITableViewController {
             } catch let error as NSError  {
                 print("Could not save \(error), \(error.userInfo)")
             }
+            
+            
+            let request = NSMutableURLRequest(URL: NSURL(string: "http://goodwin.io/API/submitTask.php")!)
+            request.HTTPMethod = "POST"
+            
+            
+            
+            let postString = "name=" + name + "&weekday=" + day + "&startDate=" + startDateString + "&endDate=" + endDateString + "&location=" + location
+            
+            request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+            let req = NSURLSession.sharedSession().dataTaskWithRequest(request) {
+                data, response, error in
+                
+                if error != nil {
+                    print("error=\(error)")
+                    return
+                }
+                
+                print("response = \(response)")
+                
+                let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                print("responseString = \(responseString)")
+            }
+            req.resume()
+            
+            
         }
     }
 

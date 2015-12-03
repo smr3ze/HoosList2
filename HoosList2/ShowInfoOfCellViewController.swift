@@ -166,13 +166,11 @@ class ShowInfoOfCellViewController: UIViewController, UINavigationControllerDele
                     //if reqs are true, take photo
                     if(passReqs == true){
                         completed = true
-                        print("completed:", completed)
                         takePhoto.setTitle("Mark as completed!", forState: .Normal)
                         takePhoto.enabled = true
                     }
                     //otherwise, disable button
                     else{
-                        print("completed", completed)
                         takePhoto.setTitle("Requirements not met!", forState: .Normal)
                         takePhoto.enabled = false
                         takePhoto.backgroundColor = UIColor(red: 137/255, green: 196/255, blue: 244/255, alpha: 1.0)

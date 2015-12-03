@@ -21,7 +21,6 @@
 		219207FF1BE980420093C70A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 219207FE1BE980420093C70A /* CoreLocation.framework */; };
 		21ED45571C0E613000805910 /* NewItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ED45561C0E613000805910 /* NewItemController.swift */; };
 		4C7A66E21BE1AF6B004B3A9D /* ShowInfoOfCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7A66E11BE1AF6B004B3A9D /* ShowInfoOfCellViewController.swift */; };
-		4CD1E7711BEA967900586B0B /* tasks.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4CD1E7701BEA967900586B0B /* tasks.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +61,6 @@
 		219207FE1BE980420093C70A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		21ED45561C0E613000805910 /* NewItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewItemController.swift; path = ../NewItemController.swift; sourceTree = "<group>"; };
 		4C7A66E11BE1AF6B004B3A9D /* ShowInfoOfCellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowInfoOfCellViewController.swift; sourceTree = "<group>"; };
-		4CD1E7701BEA967900586B0B /* tasks.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tasks.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +114,6 @@
 			isa = PBXGroup;
 			children = (
 				21ED45561C0E613000805910 /* NewItemController.swift */,
-				4CD1E7701BEA967900586B0B /* tasks.txt */,
 				21455BF91BE1C37F003C504C /* CameraViewController.swift */,
 				219207FA1BE972A60093C70A /* Task.swift */,
 				21455BC21BE1A282003C504C /* AppDelegate.swift */,
@@ -218,7 +215,7 @@
 				TargetAttributes = {
 					21455BBE1BE1A282003C504C = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = Y9FE52N5WX;
+						DevelopmentTeam = 95C86UJL2Y;
 					};
 					21455BD51BE1A282003C504C = {
 						CreatedOnToolsVersion = 7.1;
@@ -256,7 +253,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				21455BD01BE1A282003C504C /* LaunchScreen.storyboard in Resources */,
-				4CD1E7711BEA967900586B0B /* tasks.txt in Resources */,
 				21455BCD1BE1A282003C504C /* Assets.xcassets in Resources */,
 				21455BC81BE1A282003C504C /* Main.storyboard in Resources */,
 			);
@@ -435,7 +431,7 @@
 				INFOPLIST_FILE = HoosList2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.virginia.cs.httpscs4720.HoosList2;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.virginia.cs.httpscs4720.HoosList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -450,7 +446,7 @@
 				INFOPLIST_FILE = HoosList2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.virginia.cs.httpscs4720.HoosList2;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.virginia.cs.httpscs4720.HoosList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
