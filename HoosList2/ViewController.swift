@@ -93,6 +93,14 @@ class ViewController: UITableViewController, CLLocationManagerDelegate {
         }
     }
     
+    @IBAction func saveTask(segue: UIStoryboardSegue){
+        tableview.reloadData()
+    }
+    
+    
+    @IBAction func cancelTask(segue: UIStoryboardSegue){
+        
+    }
     
     
     func findMyLocationText() {
@@ -203,7 +211,7 @@ class ViewController: UITableViewController, CLLocationManagerDelegate {
                     
                     if (attrArray["startDate"] as! String == "nil") {
                         let faux = "2001-01-01";
-                        task.startTime = dateFormatter.dateFromString(faux)!
+                        task.startTime = dateFormatter.dateFromString(faux as String!)!
                     }
                     else {
                         task.startTime = dateFormatter.dateFromString(attrArray["startDate"] as! String)!
